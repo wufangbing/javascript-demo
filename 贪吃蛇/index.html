@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>贪吃蛇</title>
+<script src="../js/西开1.js"></script>
+<script>
+window.onload=function()
+{
+	
+	var obox=document.getElementById('box');
+	var oa=document.getElementById('a');
+	var timer=null;
+	document.onkeydown=function(ev)
+	{
+		var oEvent=ev||event;
+		
+		
+		
+		
+		
+		
+		if(oEvent.keyCode==37)
+		{
+			clearInterval(timer);
+			cssStyle(obox,'left',cssStyle(obox,'left')-10);
+			timer=setInterval(function(){
+				cssStyle(obox,'left',cssStyle(obox,'left')-10);
+				
+				},500);
+		}
+		
+		if(oEvent.keyCode==38)
+		{
+			clearInterval(timer);
+			cssStyle(obox,'top',cssStyle(obox,'top')-10);
+		
+			timer=setInterval(function(){
+				cssStyle(obox,'top',cssStyle(obox,'top')-10);
+				
+				},500);
+		}
+		
+		if(oEvent.keyCode==39)
+		{
+			clearInterval(timer);
+			cssStyle(obox,'left',cssStyle(obox,'left')+10);
+			timer=setInterval(function(){
+				cssStyle(obox,'left',cssStyle(obox,'left')+10);
+				
+				},500);
+		}
+		
+		if(oEvent.keyCode==40)
+		{
+			clearInterval(timer);
+			cssStyle(obox,'top',cssStyle(obox,'top')+10);
+			timer=setInterval(function(){
+				cssStyle(obox,'top',cssStyle(obox,'top')+10);
+				
+				},500);
+		}
+		
+		var j=0;
+		if(j==0)
+		{
+			if(cssStyle(obox,'left')>=80&&cssStyle(obox,'left')<=120&&cssStyle(obox,'top')>=80&&cssStyle(obox,'top')<=120)
+			{
+			var odiv=document.createElement('div');
+			odiv.style.left=Math.random()*500+1+'px';
+			odiv.style.top=Math.random()*500+1+'px';
+			document.body.appendChild(odiv);
+			oa.style.opacity=0;
+			cssStyle(obox,'width',cssStyle(obox,'width')+20);
+			j++;	
+			}
+		
+		}
+		else
+		{
+			
+			
+			
+			
+		}
+		
+		
+	} 
+	
+	
+	
+	
+		
+};
+
+
+
+</script>
+
+
+
+
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	border:0px;}
+	
+#box{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:20px;
+	height:20px;
+	background:#F00;}
+	
+div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:20px;
+	height:20px;
+	background:#00F;
+	}
+
+	
+#a{
+	position:absolute;
+	left:100px;
+	top:100px;
+	width:20px;
+	height:20px;
+	background:#00F;
+	}
+	
+#all{
+	width:800px;
+	height:500px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	border:0px solid #C66;
+	background:#9C0;
+	}
+	
+</style>
+
+</head>
+
+<body>
+<div id="all">
+
+<div id="box"></div>
+<div id="a"></div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var oall=document.getElementById('all');
+	var obox=document.getElementById('box');
+	var obottom=document.getElementById('bottom');
+	
+	obox.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		var opx=oEvent.clientX-obox.offsetLeft;
+		var opy=oEvent.clientY-obox.offsetTop;
+		
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			var l=0;
+			var t=0;
+			l=oEvent.clientX-opx;
+			t=oEvent.clientY-opy;
+			if(l<0)
+			{
+				l=0;	
+			}
+			else if(l>oall.offsetWidth-obox.offsetWidth)
+			{
+			l=oall.offsetWidth-obox.offsetWidth;
+			}
+			if(t<0)
+			{
+				t=0;
+			}else if(t>oall.offsetHeight-obox.offsetHeight)
+			
+			{
+				t=oall.offsetHeight-obox.offsetHeight;
+			}
+			obox.style.left=l+'px';
+			obox.style.top=t+'px';
+			
+			obottom.style.width=50+l+'px';
+			obottom.style.height=50+l+'px';
+		}
+		
+		
+	}
+	
+	document.onmouseup=function()
+	{
+		document.onmousemove='';	
+		document.onmouseup='';
+	}
+	
+	return false;
+	
+};
+
+
+
+
+</script>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	border:0px;}
+	
+#all{
+	width:500px;
+	height:50px;
+	background:#C96;
+	position:relative;
+	left:100px;
+	top:0px;}
+
+#box{
+	width:50px;
+	height:50px;
+	background:#F06;
+	position:absolute;
+	left:0px;
+	top:0px;}
+	
+
+#bottom{
+	width:50px;
+	height:50px;
+	background:#F06;
+	}
+</style>
+
+
+</head>
+
+<body>
+ <div id="all">
+ 
+  <div id="box"></div>
+ 
+ </div>
+ 
+ 
+ 
+ <div id="bottom"></div>
+ 
+</body>
+</html>

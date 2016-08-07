@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementsByTagName('div')[0];
+	 
+	 
+	document.onclick=function(ev)
+	{
+		var oEvent=ev||event;
+		
+		oDiv.style.left=oEvent.clientX+'px';
+		oDiv.style.top=oEvent.clientY+'px';
+	};
+	
+};
+
+</script>
+<style>
+div{ width:200px;
+	 height:200px;
+	 background:#3FC;
+	 position:absolute;
+	 }
+
+</style>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

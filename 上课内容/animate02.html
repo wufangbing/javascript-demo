@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{ width:50px;
+		 height:50px;
+		 background:#FC0;
+		 transform-origin:left top;
+		 transform:rotate(45deg);
+		 margin:50px;
+		 margin-left:100px;
+		 float:left;
+		 animation:bai 5s ease-in 1s infinite;
+		 
+		 }
+	div:hover{
+			width:200px;
+			height:200px;
+			transition:all 3s ease-out;
+		}
+	 @keyframes bai{
+		 0% {background:#0C0; transform:rotate(55deg); margin-top:50px;}
+		 20% {background:#639; transform:rotate(65deg); margin-top:100px;}
+		 40% {background:#FC0; transform:rotate(55deg); margin-top:150px;}
+		 60% {background:#C09; transform:rotate(45deg); margin-top:200px;}
+		 80% {background:#996; transform:rotate(35deg); margin-top:250px;}
+		 100% {background:#FF0; transform:rotate(25deg); margin-top:50px;}
+		 }
+	
+	@keyframes flower{
+		 0% { width:75px;height:75px;}
+		 25% { width:100px;height:100px;}
+		 50% { width:125px;height:125px;}
+		  75% { width:150px;height:150px;}
+		   100% { width:175px;height:175px;}
+		}
+	
+</style>
+</head>
+
+<body>
+	<div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

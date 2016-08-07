@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function cssStyle(obj,prop,value)
+{
+	if(arguments.length==2)
+	{
+		if(obj.currentStyle)
+		return obj.currentStyle[prop];
+		else
+		return getComputedStyle(obj,false)[prop];
+		
+	}
+	else
+	obj.style[prop]=value;
+}
+window.onload=function()
+{
+	
+	var oh=document.getElementById('header');
+	var oh2=document.getElementById('headerleft');
+	var timer=null;
+	oh.onmouseover=function()
+	{
+		
+		oh2.style.display='block';
+	};
+	
+	oh.onmouseout=function()
+		{
+			timer=setTimeout(function()
+			{oh2.style.display='none'}
+			,1000);
+		
+		};	
+	
+	oh2.onmouseover=function()
+	{
+		clearTimeout(timer);
+		oh2.style.display='block';
+	};
+	
+	oh2.onmouseout=function()
+	{
+		time=setTimeout(function()
+		{
+			oh2.style.display='none';
+		},1000);
+		
+	};
+	var obottom=document.getElementById('bottom');
+	var aul=obottom.getElementsByTagName('ul');
+	var ali=obottom.getElementsByTagName('div');
+	for(var i=0;i<aul.length;i++)
+	{
+		ali[i].index=i;
+		ali[i].onclick=function()
+		{
+			if(aul[this.index].style.display=='none')
+			{
+				aul[this.index].style.display='block';
+				cssStyle(ali[this.index],'list-style-image','url(image/728.gif)');
+			}
+			else
+			{
+			aul[this.index].style.display='none';
+			cssStyle(ali[this.index],'list-style-image','url(image/727.gif)');
+		}
+		}
+	}
+};
+</script>
+<style>
+*{	margin：0px;
+	padding:0px;
+	border:0px;}
+
+#all	{width:200px;
+		height:700px;
+		border:1px solid #9C0;
+		margin:auto;
+		
+		}
+		
+#header{
+	
+	width:100px;
+	height:100px;
+	background:#09C;
+	}
+
+#headerleft{
+	width:200px;
+	height:200px;
+	background:#093;
+	position:absolute;
+	left:374px;
+	top:40px;
+	display:none;
+	}
+	
+#bottom{
+	width:198px;
+	height:598px;
+	border:1px solid #903;
+	}
+	
+#oul{
+	margin-left:20px;
+	list-style-image:url(image/727.gif);
+	margin-top:10px;
+	}
+
+ul {
+	list-style-image:none;
+	display:none;}
+
+.ul2{
+	display:block;}
+</style>
+</head>
+
+<body>
+<div id="all">
+<div id="header"></div>
+
+
+<div id="bottom">
+<ol id="oul">
+
+
+<div><li>1</li></div>
+<ul class="" type="square">
+<li>小明</li>
+<li>小芳</li>
+<li>小白</li>
+</ul>
+
+
+<div><li>2</li></div>
+<ul class="" type="square">
+<li>小明</li>
+<li>小芳</li>
+<li>小白</li>
+</ul>
+
+
+<div><li>3</li></div>
+<ul class="" type="square">
+<li>小明</li>
+<li>小芳</li>
+<li>小白</li>
+</ul>
+
+<div><li>4</li></div>
+<ul class="" type="square">
+<li>小明</li>
+<li>小芳</li>
+<li>小白</li>
+</ul>
+</ol>
+</div>
+</div>
+<div id="headerleft"></div>
+</body>
+</html>

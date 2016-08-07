@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript" src="js/1.js"></script>
+<script>
+window.onload=function()
+{
+	str='1234567890ABCDEF';
+	var timer=setInterval(function(){
+		for(var i=0;i<100;i++)
+		{
+			var odiv=document.createElement('div');
+			document.body.appendChild(odiv);
+			odiv.style.left=Math.random()*1300+'px';
+			odiv.style.color='#'+str[parseInt(Math.random()*16)]+str[parseInt(Math.random()*16)]+str[parseInt(Math.random()*16)]+str[parseInt(Math.random()*16)]+str[parseInt(Math.random()*16)]+str[parseInt(Math.random()*16)];
+			odiv.innerHTML=String.fromCharCode(98+Math.random()*26);
+										
+			sport(odiv,{top:Math.random()*700,opacity:0});
+			
+			
+			
+		}
+		
+		},150);
+	
+};
+
+
+
+</script>
+
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+
+body{
+	font-size:13px;
+	background:#000;}
+	
+div{
+	position:absolute;
+	border:0px solid #0F9;
+	width:10px;
+	height:10px;
+	border-radius:3px;
+	text-align:center;
+	left:0px;
+	top:0px;
+	
+	}
+
+</style>
+</head>
+
+<body>
+
+</body>
+</html>

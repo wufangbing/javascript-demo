@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>拖动</title>
+<style>
+#box { width:200px;
+		height:200px;
+		background:#639;
+		position:absolute;
+}
+</style>
+
+<script>
+window.onload=function(){
+	
+	var oBox=document.getElementById('box');
+	
+	oBox.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		
+		var px=oEvent.clientX-oBox.offsetLeft;
+		var py=oEvent.clientY-oBox.offsetTop;
+		
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			oBox.style.left=oEvent.clientX-px+'px';
+			oBox.style.top=oEvent.clientY-py+'px';
+				
+		};
+		oBox.onmouseup=function()
+		{
+			document.onmousemove=null;
+			oBox.onmouseup=null;
+		};
+			
+	};	
+};
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

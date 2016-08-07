@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	document.oncontextmenu=function(ev)
+	{
+		var oEvent=ev||event;
+		obox.style.display='block';
+		obox.style.left=oEvent.clientX+'px';
+		obox.style.top=oEvent.clientY+'px';
+		return false;
+	}
+	
+	document.onmouseup=function()
+	{
+		obox.style.display='none';
+		
+	}
+	
+		
+	
+};
+
+
+</script>
+<style>
+*{		margin:0px;
+		padding:0px;
+		border:0px;}
+
+#box{
+	width:100px;
+	height:100px;
+	background:#0C9;
+	display:none;
+	position:absolute;
+	left:0px;
+	top:0px;}
+
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+ <!--<script type="text/javascript" src="轮播器.js"></script>-->
+<script>
+function cssStyle(obj,prop,value)
+{
+	if(arguments.length==2)
+	{
+		if(obj.currentStyle)
+		return parseFloat(obj.currentStyle[prop]);
+		else
+		return parseFloat(getComputedStyle(obj,false)[prop]);
+		
+	}
+	else
+	obj.style[prop]=value+'px';
+	
+	
+}
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	var aul=obox.getElementsByTagName('ul')[0];
+	var ali=aul.getElementsByTagName('li');
+
+	var obut=document.getElementById('but');
+	var abt=obut.getElementsByTagName('input');
+	
+	var oleft=document.getElementById('left');
+	var oright=document.getElementById('right');
+	
+	 cssStyle(aul,'width',cssStyle(ali[0],'width')*4);
+	 
+	 var z=0;
+	 var m=0;
+	 oleft.onclick=function()
+	 {
+		 z=i;
+		 if(z>=1&&z<=3)
+		 {
+		 	z--;
+		 sport(aul,'left',-cssStyle(ali[0],'width')*z);
+		 }
+		 else
+		 {
+			 z=3;
+			 cssStyle(aul,'left',-cssStyle(ali[0],'width')*z);
+		 sport(aul,'left',-cssStyle(ali[0],'width')*z);
+			 
+		}
+		 i=z; 
+	}
+	
+	 oright.onclick=function()
+	 {
+		 z=m;
+		 if(z>=0&&z<=2)
+		 {
+		 	z++;
+		 sport(aul,'left',-cssStyle(ali[0],'width')*z);
+		 }
+		 else
+		 {
+			 z=0;
+			 cssStyle(aul,'left',-cssStyle(ali[0],'width')*z);
+		 sport(aul,'left',-cssStyle(ali[0],'width')*z);
+			 
+		}
+		 m=z; 
+	}
+	
+	
+	
+	for(var k=0;k<abt.length;k++)
+	{
+		abt[k].index=k;
+		abt[k].onclick=function()
+		{
+		for(var k=0;k<abt.length;k++)
+		abt[k].className='';
+		
+		this.className='color';
+		i=m=this.index;
+		sport(aul,'left',-(this.index)*cssStyle(ali[0],'width'));
+		}
+		
+	}
+	
+	var timer=null;
+	var i=1;
+	var m=3;
+	timer=setInterval(function()
+	{
+		
+	if(i<ali.length)
+	{
+	sport(aul,'left',-cssStyle(ali[0],'width')*i);
+	for(var j=0;j<abt.length;j++)
+	abt[j].className='';
+	abt[i].className='color';
+	i++;
+	}
+	else
+	{
+		
+		if(m>=0)
+		{
+		sport(aul,'left',-cssStyle(ali[0],'width')*m);
+			m--;
+			for(var j=0;j<abt.length;j++)
+			abt[j].className='';
+			abt[m+1].className='color';
+		}
+		else
+		{
+			i=1;
+			m=3;
+			
+		}
+	
+	}
+		
+	},1500);
+	
+	
+	};
+	
+var timer=null;
+function sport(obj,prop,end)
+{
+	clearInterval(timer);
+	var val=0;
+	var speed=0;
+	timer=setInterval(function()
+	{
+		if(prop=='opacity')
+		val=Math.round(cssStyle(obj,prop)*100);
+		else
+		val=cssStyle(obj,prop);
+		
+		speed=(end-val)/10;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		
+		if(prop=='opacity')
+		{
+			if(val==end)
+			clearInterval(timer);
+			else
+			obj.style.opacity=(val+speed)/100;
+			obj.style.filter='alpha(opacity:'+(val+speed)+')';
+			
+			
+		}
+		else
+		cssStyle(obj,prop,cssStyle(obj,prop)+speed);
+		
+		
+		
+		
+	},30);
+	
+	
+}
+
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;
+	}
+
+#box{
+	width:300px;
+	height:150px;
+	position:absolute;
+	left:500px;
+	top:100px;
+	overflow:hidden;
+	z-index:1;
+	}
+	
+#box ul{
+	position:absolute;
+	left:0px;
+	list-style:none;
+	
+	}
+
+#box ul li{
+	width:300px;
+	height:150px;
+	border:0px solid #0FC;
+	float:left;}
+
+#but{width:200px;
+	height:50px;
+	border:0px solid #096;
+	right:-30px;
+	top:100px;
+	position:absolute;
+	top:100px;}
+	
+#but input{
+	width:30px;
+	height:30px;
+	border-radius:30px;
+	font-weight:bold;
+	line-height:28px;
+	text-align:center;
+	border:1px solid #960;	
+	float:left;
+	}
+
+.color{
+	background-color:#FF0;
+	
+	}
+
+#left{
+	width:30px;
+	height:30px;
+	position:absolute;
+	top:80px;
+	opacity:0.5;
+	}
+	
+#right{
+	width:30px;
+	height:30px;
+	position:absolute;
+	top:80px;
+	right:0px;
+	opacity:0.5;}
+</style>
+</head>
+
+<body>
+<div id="box">
+<ul>
+<li>1<img height="150px" width="300px" src="image/1.jpg"></li>
+<li>2<img height="150px" width="300px" src="image/2.jpg"></li>
+<li>3<img height="150px" width="300px" src="image/4.jpg"></li>
+<li>4<img height="150px" width="300px" src="image/5.jpg"></li>
+</ul>
+
+<div id="but">
+<input type="button" value="1" class="color">
+<input type="button" value="2" class="">
+<input type="button" value="3" class="">
+<input type="button" value="4" class="">
+</div>
+
+<input type="button" value="left" id="left">
+<input type="button" value="right" id="right">
+
+</div><!--结束-->
+</body>
+</html>

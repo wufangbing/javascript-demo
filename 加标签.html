@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var aul=document.getElementsByTagName('ul')[0];
+	var abt=document.getElementsByTagName('input')[0];
+	var otext=document.getElementsByTagName('textarea')[0];
+	var ali=aul.getElementsByTagName('li');
+	
+	abt.onclick=function()
+	{
+	var oli=document.createElement('li');
+	oli.innerHTML=otext.value;
+	if(ali.length>0)
+	aul.insertBefore(oli,ali[0]);
+	else
+	aul.appendChild(oli);
+	}
+	
+	
+	};
+
+
+</script>
+</head>
+
+<body>
+<ul>
+</ul>
+<textarea rows="20" cols="20"></textarea><br>
+<input type="button" value="确定">
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var obox1=document.getElementById('box1');
+	var obox2=document.getElementById('box2');
+	var obox3=document.getElementById('box3');
+	var obox4=document.getElementById('box4');
+	var n=50;
+	obox4.onclick=function()
+	{
+		if(obox4.offsetLeft>=150&&obox4.offsetLeft<=749)
+		{
+		sport(obox4,750);	
+		
+		}
+		else
+		{
+		sport(obox4,150);
+		
+		}
+	}
+	obox3.onclick=function()
+	{
+		if(obox3.offsetLeft>=100&&obox3.offsetLeft<=699)
+	sport(obox3,700);	
+	else
+	sport(obox3,100);
+		
+	}
+	obox2.onclick=function()
+	{
+	if(obox2.offsetLeft>=50&&obox2.offsetLeft<=649)
+	sport(obox2,650);	
+	else
+	sport(obox2,50);
+		
+	}
+	obox1.onclick=function()
+	{
+	if(obox1.offsetLeft>=0&&obox1.offsetLeft<=599)
+	sport(obox1,600);	
+	else
+	sport(obox1,0);	
+		
+	}
+	
+	
+};
+var timer=null;
+function sport(obj,end)
+{
+	clearInterval(timer);
+	var speed=0;
+	timer=setInterval(function()
+	{
+		speed=(end-obj.offsetLeft)/10;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(obj.offsetLeft==end)
+		clearInterval(timer);
+		else
+		obj.style.left=obj.offsetLeft+speed+'px';
+		
+	},30);
+	
+	
+	
+};
+
+
+</script>
+<style>
+span{
+	font-weight:bold;
+	margin-top:50px;
+	font-size:27px;
+	}
+#all{
+	width:800px;
+	height:200px;
+	border:1px dotted  #3300CC;
+	position:relative;
+	left:300px;
+	top:200px;
+	
+	}
+
+#box1{
+	width:50px;
+	height:200px;
+	background:#693;
+	float:left;
+	position:absolute;
+	left:0px;
+	}
+
+#box2{
+	width:50px;
+	height:200px;
+	background:rgba(0,255,204,0.5);
+	float:left;
+	position:absolute;
+	left:50px;
+	}
+
+#box3{
+	width:50px;
+	height:200px;
+	background:#F60;
+	float:left;
+	position:absolute;
+	left:100px;
+	}
+
+#box4{
+	width:50px;
+	height:200px;
+	background:#693;
+	float:left;
+	position:absolute;
+	left:150px;
+	}
+
+
+</style>
+</head>
+
+<body>
+<div id="all">
+<div id="box1"><span style="display:block">第一层</span></div>
+<div id="box2"><span style="display:block">第二层</span></div>
+<div id="box3"><span style="display:block">第三层</span></div>
+<div id="box4"><span style="display:block">第四层</span></div>
+</div>
+</body>
+</html>

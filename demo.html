@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var aul=document.getElementsByTagName('ul')[0];
+	var ali=aul.getElementsByTagName('li');
+	/*alert(aul.nodeName);
+	alert(ali[0].nodeName);
+	alert(aul.nodeType);
+	for(var i=0;i<aul.childNodes.length;i++)
+		alert(aul.childNodes[i].nodeValue);
+	
+	for(var i=0;i<aul.children.length;i++)
+	alert(aul.children[i].nodeType);*/
+	alert(aul.previousElementSibling.nodeName);
+	alert(aul.nextElementSibling.nodeName);
+};
+
+
+</script>
+</head>
+
+<body>
+<p></p>
+<ul style="list-style:none">
+1234
+<li></li>
+<li></li>
+</ul>
+<div></div>
+<p></p>
+</body>
+</html>

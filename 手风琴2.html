@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>手风琴</title>
+<script type="text/javascript" src="js/链式运动.js"></script>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	var adiv=obox.getElementsByTagName('div');
+	var m=0;
+	for(var i=0;i<adiv.length;i++)
+	{
+		adiv[i].index=i;
+		
+		adiv[i].onclick=function()
+		{
+			
+			
+			if(cssStyle(adiv[this.index],'width')==400)
+			m=400;
+			else
+			m=50;
+			
+				if(m==400)
+				{
+					for(var j=0;j<=this.index;j++)
+					{
+						sport(adiv[j],{width:50});
+					}
+				}
+				
+				else
+				{
+					for(var k=adiv.length-1;k>=this.index;k--)
+					sport(adiv[k],{width:400});	
+					
+				}
+			
+		};
+		
+		
+	};
+	
+	
+	
+};
+
+
+
+
+</script>
+
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;
+	}
+	
+#box{
+	width:558px;
+	height:202px;
+	position:relative;
+	margin:200px auto;
+	border:1px solid #000;
+	}
+	
+
+#a1{
+	width:400px;
+	height:200px;
+	float:left;
+	position:absolute;
+	left:0px;
+	z-index:4;
+	}
+
+#a1 span{
+	width:50px;
+	height:200px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	border:1px solid #9C6;
+	text-align:center;
+	font-size:18px;
+	line-height:50px;
+	background:rgba(153,204,0,1);
+	}
+	
+	
+#a2{
+	width:400px;
+	height:200px;
+	float:left;
+	position:absolute;
+	left:52px;
+	z-index:3;
+	}
+
+#a2 span{
+	width:50px;
+	height:200px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	border:1px solid #9C6;
+	text-align:center;
+	font-size:18px;
+	line-height:50px;
+	background:#0F6;
+	}
+
+#a3{
+	width:400px;
+	height:200px;
+	float:left;
+	position:absolute;
+	left:104px;
+	z-index:2;
+	}
+
+#a3 span{
+	width:50px;
+	height:200px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	border:1px solid #9C6;
+	text-align:center;
+	font-size:18px;
+	line-height:50px;
+	background:#F33;
+	}
+
+#a4{
+	width:400px;
+	height:200px;
+	float:left;
+	position:absolute;
+	left:156px;
+	z-index:1;
+	}
+
+#a4 span{
+	width:50px;
+	height:200px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	border:1px solid #9C6;
+	text-align:center;
+	font-size:18px;
+	line-height:50px;
+	background:#CCC;
+	}
+</style>
+</head>
+
+<body>
+<div id="box">
+<div id="a1">
+<span>第<br>一<br>层</span>
+</div>
+
+<div id="a2">
+<span>第<br>二<br>层</span>
+</div>
+
+<div id="a3">
+<span>第<br>三<br>层</span>
+</div>
+
+<div id="a4">
+<span>第<br>四<br>层</span>
+</div>
+
+</div>
+</body>
+</html>

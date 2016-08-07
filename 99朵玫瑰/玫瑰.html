@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var j=0;
+	
+	var timer=setInterval(function()
+	{
+		
+			
+				if(j<52)
+				{
+			for(var i=1;i<=10;i++)
+			{
+				var odiv=document.createElement('div');
+				odiv.style.width='70px';
+				odiv.style.width='70px';
+				odiv.style.left=Math.random()*900+'px';
+				odiv.style.top=Math.random()*600+'px';
+				odiv.innerHTML='<img src='+i+'.jpg>';
+				document.body.appendChild(odiv);
+			}
+				j++;
+				}
+			else
+			{
+			clearInterval(timer);
+			var odiv=document.createElement('div');
+			odiv.setAttribute('id','box');
+			odiv.innerHTML='玫瑰代表我的心';
+			odiv.style.right='50px';
+			odiv.style.top='200px';
+			document.body.appendChild(odiv);
+			}
+			
+		
+		},500)
+		
+		
+};
+	
+
+</script>
+<style>
+div{
+	position:absolute;
+}
+
+#box{
+	color:#F00;
+	font-size:30px;
+	width:40px;
+	height:400px;
+	
+	}
+img {
+	width:70px;
+	height:70px;}
+
+
+</style>
+</head>
+
+<body>
+</body>
+</html>

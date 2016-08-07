@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var odiv=document.getElementsByTagName('div')[0];
+	odiv.onmouseover=function()
+	{
+		sport(odiv,0);
+		
+	}
+	
+};
+var timer=null;
+function sport(obj,end)
+{
+	clearInterval(timer);
+	var speed=0;
+	speed=(end-obj.offsetWidth)/10;
+	speend=speed>0?Math.ceil(speed):Math.floor(speed);
+	
+	timer=setInterval(function()
+	{
+		if(obj.offsetWidth==end)
+		clearInterval(timer);
+		else
+		{
+			obj.style.width=obj.offsetWidth-2+'px';
+		}
+		
+		
+		
+		
+	}
+	
+	,30)
+	
+	
+};
+
+
+
+</script>
+<style>
+*{	margin:0px;
+	padding:0px;
+	border:0px;}
+	
+div{width:200px;
+	height:200px;
+	background:#0C6;}
+
+
+
+</style>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

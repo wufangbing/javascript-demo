@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="西开1.js"></script>
+<script>
+window.onload=function()
+{
+	var ob=document.getElementById('bottom');
+	var aul=ob.getElementsByTagName('ul')[0];
+	var ali=aul.getElementsByTagName('li');
+	var oheader=document.getElementById('header');
+	var aimg=oheader.getElementsByTagName('img');
+	//alert(ali.length);
+	
+	cssStyle(aul,'width',cssStyle(ali[0],'width')*ali.length);
+	var i=1;
+	var j=4;
+	var l=0;
+	var t=0;
+	
+	for(var t=0;t<ali.length;t++)
+	{
+		ali[t].index=t;
+		ali[t].onmouseover=function()
+		{
+			for(var b=0;b<ali.length;b++)	
+			ali[b].style.opacity=0.3;
+			ali[this.index].style.opacity=1;
+			
+			if(this.index>=1&&this.index<=5)
+			{
+				linearSport(aimg[6-this.index],{height:0});	
+				
+				
+			}
+			else if(this.index==0)
+			{
+				for(var v=0;v<aimg.length;v++)
+					{
+					aimg[v].style.height='300px';
+					}
+					
+					linearSport(aimg[0],{height:0});
+				
+			}
+			i=this.index;	
+		}
+		
+		
+	
+				
+	}
+
+	
+	var timer=setInterval(function(){
+		
+		if(i<=3)
+		{
+			sport(aul,{left:-cssStyle(ali[0],'width')*i});
+			for(var k=0;k<ali.length;k++)
+			{
+				ali[k].style.opacity=0.3;
+			}
+			
+				ali[i].style.opacity=1;
+				
+				
+					
+				l=i;
+				if(l>=1&&l<=3)
+				{
+					linearSport(aimg[6-i],{height:0});	
+				}
+				else if(l==0)
+				{
+					linearSport(aimg[0],{height:0});
+					for(var v=0;v<aimg.length;v++)
+					{
+					aimg[v].style.height='300px';
+					}
+		
+					
+				}
+				
+			
+			i++;
+		}
+		
+		else
+		{
+			if(j<=4)
+		{	
+			
+				for(var k=0;k<ali.length;k++)
+				{
+				ali[k].style.opacity=0.3;
+				}
+			
+				ali[j].style.opacity=1;
+				
+				linearSport(aimg[2],{height:0});	
+				
+				j++;
+		}
+		
+		else
+			{	
+					
+				for(var k=0;k<ali.length;k++)
+				{
+				ali[k].style.opacity=0.3;
+				}
+			
+				ali[5].style.opacity=1;
+				linearSport(aimg[1],{height:0});
+				i=0;
+				j=4;
+			}
+				
+		}
+		
+		
+		},2000);
+	
+	
+	
+	
+	
+};
+
+
+</script>
+
+
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+
+#all{
+	width:300px;
+	height:400px;
+	position:relative;
+	margin:100px auto;
+	border:1px solid #9F0;
+	}
+
+#bottom{
+	width:300px;
+	height:100px;
+	position:absolute;
+	left:0px;
+	border:1px solid #9F0;
+	overflow:hidden;}
+	
+#bottom ul{list-style:none;
+		position:absolute;
+		left:0px;	
+	}
+
+#bottom ul li{
+	width:100px;
+	height:100px;
+	float:left;}
+	
+.a{
+	opacity:0.3;}
+
+.b{
+	opacity:1;}
+	
+#header{
+	width:300px;
+	height:300px;
+	border:1px solid #9F0;}
+
+#header ul li{
+	list-style:none;
+	position:absolute;}
+	
+#header ul li img{
+	width:300px;
+	height:300px;
+	}
+</style>
+</head>
+
+<body>
+<div id="all">
+
+
+
+
+<div id="header">
+<ul>
+	<li><img src="6.jpg"></li>
+    <li><img src="5.jpg"></li>
+    <li><img src="4.jpg"></li>
+    <li><img src="3.jpg"></li>
+    <li><img src="2.jpg"></li>
+    <li><img src="1.jpg"></li>		  
+</ul>
+</div>
+
+
+
+
+
+
+<div id="bottom">
+<ul>
+	<li class="a"  style="opacity:1"><img  width="100px" height="100px" src="1.jpg"></li>
+    <li class="a"><img width="100px" height="100px" src="2.jpg"></li>
+    <li class="a"><img width="100px" height="100px" src="3.jpg"></li>
+    <li class="a"><img width="100px" height="100px" src="4.jpg"></li>
+    <li class="a"><img width="100px" height="100px" src="5.jpg"></li>
+    <li class="a"><img width="100px" height="100px" src="6.jpg"></li>	
+</ul>
+</div>
+
+</div><!--结束-->
+
+</body>
+</html>

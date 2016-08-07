@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+function cssStyle(obj,prop,value)
+{
+	if(arguments.length==2)
+	{
+		if(obj.currentStyle)
+		return parseFloat(obj.currentStyle[prop]);
+		else
+		return parseFloat(getComputedStyle(obj,false)[prop]);
+		
+	}
+	else
+	obj.style[prop]=value+'px';
+	
+	
+	
+}
+window.onload=function()
+{
+	var abox=document.getElementsByTagName('div');
+	for(var i=0;i<abox.length;i++)
+	{
+		abox[i].onmouseover=function()
+		{
+			sport(this,'width',600);	
+			
+		}
+		
+		
+		
+	}
+	
+
+}
+var timer=null;
+function sport(obj,prop,end)
+{
+	clearInterval(obj.timer);
+	var speed=0;
+	obj.timer=setInterval(function()
+	{
+		speed=(end-cssStyle(obj,prop))/10;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(cssStyle(obj,prop)==end)
+		clearInterval(obj.timer);
+		else
+		cssStyle(obj,prop,cssStyle(obj,prop)+speed);	
+		
+	},30);
+	
+	
+}
+
+
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+
+#box1{	width:200px;
+		height:200px;
+		border:1px solid #090;
+		background:#0C6;}
+		
+#box2{	width:200px;
+		height:200px;
+		border:1px solid #090;
+		background:#9C3;
+		position:absolute;
+		left:0px;
+		}
+</style>
+</head>
+
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+</body>
+</html>

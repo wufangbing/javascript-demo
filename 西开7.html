@@ -1,0 +1,216 @@
+<meta charset="UTF-8">
+<title>7</title>
+<link type="text/css" href="css/西开7.css" rel="stylesheet">
+<script>
+	
+	function baidu()
+	{
+		var orad=document.getElementsByName('v')[0];
+		var oright=document.getElementById('right');
+		
+		
+		if(orad.checked==true)
+		{
+			
+		oright.style.opacity=0;
+		
+		}
+		
+		orad.onclick=function()
+		{
+			orad.checked=false;
+			oright.style.opacity=1;
+			orad.onclick=function()
+			{
+				orad.checked=true;
+				oright.style.opacity=0;
+					orad.onclick=function()
+				{
+					orad.checked=false;
+					oright.style.opacity=1;
+				}
+			}
+				
+		}
+		
+	
+	}
+window.onload=function()
+{
+	var opic=document.getElementById('pic');
+	var aimg =opic.getElementsByTagName('img');
+	
+	var oapper=document.getElementById('apper');
+	var adiv=oapper.getElementsByTagName('div');
+	//alert(orad.length);
+	
+	
+	
+	
+	var str=['qq','phone','weichat','top'];
+	var change=['qq-over','phone-over','weichat-over','top-over'];
+	
+	for(var i=0;i<aimg.length;i++)
+	{
+		aimg[i].index=i;
+		aimg[i].onmouseover=function()
+		{
+											
+			this.src='image/float_bar_'+change[this.index]+'.png'
+			adiv[this.index].style.opacity=1;
+			
+		}	
+		
+		
+	}
+	for(var i=0;i<aimg.length;i++)
+	{
+		aimg[i].index=i;
+		aimg[i].onmouseout=function()
+		{
+											
+			this.src='image/float_bar_'+str[this.index]+'.png'
+			adiv[this.index].style.opacity=0;
+			
+		}	
+		
+		
+	}
+	
+	
+}
+
+
+
+</script>
+</head>
+
+<body>
+<div id="all">
+<div id="header">
+
+<div id="he1"> <font style="display:block"> 客服热线：400-8000-8456  |  关注我们
+<img src="image/weibo.png">
+<img src="image/weixin.png"></font>
+</div>
+
+<div id="he2"><font style="display:block">你好！欢迎你来到西部开源技术中心  |  帮助中心</font></div>
+
+</div>		<!--header-->
+
+<div id="a1">
+<img src="image/top02_04.gif">
+</div>
+<div id="nav">
+
+<ul>
+<li>首页</li>
+<li>关于开源</li>
+<li>教育培训</li>
+<li>学习视频</li>
+<li>就业招聘</li>
+<li>考务系统</li>
+<li>企业技术支持</li>
+<li>联系我们</li>
+<li><textarea id="sear"  value="搜索">    </textarea></li>
+<input type="button" value="Go">
+</ul>
+</div>
+
+<div id="login">
+<input type="text" value="注册账号">
+
+</div>
+
+<div id="center">
+
+<div id="left">
+<font style="font-size:12px">手机/邮箱</font><input width="100px" type="email"><br>
+<font style="font-size:12px"><font style="opacity:0">昵称</font>昵称</font><input width="100px" type="text"><br>
+<font style="font-size:12px"><font style="opacity:0">昵称</font>密码</font><input width="100px" type="text"><br>
+<font style="font-size:12px">确认密码</font><input width="100px" type="text"><br>
+<font style="font-size:12px"><font style="opacity:0">昵</font>验证码</font><input width="100px" type="text"><br>
+<font style="font-size:12px">手机密码</font><input width="100px" type="text"><br>
+<p style="font-size:8px;"><font style="opacity:0">确认密码确认</font>忘记密码时候，可以通过该手机号码找回密码</p>
+<font style="font-size:12px"><font style="opacity:0">密码确认</font></font><input width="50px" type="text"><br>
+<font style="opacity:0">确认密码</font><input style="width:10px;height:10px;"id="in" type="radio" name="v" onClick="baidu()"><font style="font-size:8px;">我已经阅读条款及其隐私</font><br>
+<font style="opacity:0">确认密码</font><input style="background:#A4B51C;width:150px;height:30px;color:#FFF"type="button" value="点击注册">
+
+
+</div><!--left-->
+
+
+
+<div id="right">
+服务条款
+123324435436
+
+</div><!--right-->
+
+
+
+
+
+<div id="pic">
+<ul>
+<li ><img src="image/float_bar_qq.png"</li>
+<li><img src="image/float_bar_phone.png"</li>
+<li><img src="image/float_bar_weichat.png"</li>
+<li><img src="image/float_bar_top.png"</li>
+</ul>
+
+</div>
+
+
+<div id="apper">
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+</div>
+
+
+</div><!--center-->
+
+<div id="bottom1">
+<ul>
+<li style="margin-left:100px;font-size:28px;text-align:left;width:auto;background-color:#9CC;">合作企业</li>
+<li>教育培训</li>
+<li>学习视频</li>
+<li>就业招聘</li>
+<li>考务系统</li>
+<li>企业技术支持</li>
+<li>联系我们</li>
+<li style="margin-left:70px;color:#9F6;">更多企业</li>
+</ul>
+</div>
+
+<div id="bottom2">
+<div style="margin-top:50px;margin-left:40px;"><img src="image/logo-4.png"></div>
+<div style="margin-top:50px;margin-left:30px;"class="boo1"></div>
+<div style="font-size:12px;color:#FFF;margin-top:80px;margin-left:30px;">
+关于开源｜教育培训｜学习视频｜技术支持<br>
+地址：西安太白南路181号西部电子社区A座C区506 &nbsp;联系电话：029-86699937&nbsp;邮箱：westos@vip.com<br>
+copyright&nbsp;西部开源技术中心
+
+</div>
+<div style="margin-top:50px;margin-left:30px;"class="boo1"></div>
+<div style="margin-top:30px;margin-left:30px;"><img src="image/code.png"></div>
+
+
+
+</div>
+
+
+
+</div><!--结束-->
+</body>
+</html>
+
+
+
+
+</div><!--all-->
+
+</body>
+</html>

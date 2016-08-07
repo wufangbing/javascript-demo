@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+window.onload=function()
+{
+		var abt=document.getElementById('bt');
+		var adel=document.getElementById('remove');
+		var aul=document.getElementsByTagName('ul')[0];
+		
+		var ali=aul.getElementsByTagName('li');
+		
+		abt.onclick=function()
+		{
+			var oli=document.createElement('li');
+			oli.innerHTML=abt.value;
+				aul.appendChild(oli);
+			for(var i=0;i<ali.length;i++)
+				ali[i].index=i;
+				
+			
+		};
+		adel.onclick=function()
+		{
+			aul.removeChild(ali[ali.length-1]);
+		};
+};
+</script>
+</head>
+
+<body>
+
+<ul>
+</ul>
+<input id="bt" type="button" value="添加">
+<input id="remove"type="reset" value="删除">
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function()
+        {
+
+            var a=document.getElementById('box');
+            var i=5;
+            timer=setInterval(function()
+            {
+
+                if(i==0) {
+
+                    clearInterval(timer);
+                    window.location = 'http://www.baidu.com';
+                }
+                else
+
+                a.innerHTML=--i;
+
+
+            },1000)
+
+
+
+        }
+
+
+
+    </script>
+    <style>
+        div{
+            width:20px;
+            height:20px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+
+    还有<span id="box">5</span>秒进入baidu
+
+
+
+</body>
+</html>

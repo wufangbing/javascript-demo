@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+function cssScript(obj,prop,value)
+{
+		if(obj.attachEvent)
+		
+		return obj.attachEvent('on'+prop,function(){
+			alert(value);
+		})
+	
+	else
+	return obj.addEventListener(prop,function()
+	{
+		alert(value);
+		},false);
+	
+}
+window.onload=function()
+{
+	var odiv=document.getElementsByTagName('div')[0];
+	//odiv.attachEvent('onclick',function()    //ie
+//	{
+//	alert('a');	
+//		
+//	});
+//	
+//	odiv.attachEvent('onclick',function()  //ie
+//	{
+//	alert('b');	
+//	});
+	
+	
+	//odiv.addEventListener('click',function(){       //ff chrome
+//		alert('a');
+//		},false);
+//		
+//	odiv.addEventListener('click',function()		//ff chrome
+//	{
+//	alert('b');	
+//	},false)
+
+
+	cssScript(odiv,'click','jjj');
+	cssScript(odiv,'click','kkk');
+	
+};
+
+
+
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+	
+div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100px;
+	height:100px;
+	background:#9C0;}
+
+
+</style>
+</head>
+<body style="height:1000px;width:1000px;">
+
+123344
+<div></div>
+</body>
+</html>

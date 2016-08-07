@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var oh=document.getElementById('header');
+	var obox=document.getElementById('box');
+	var ob=document.getElementById('bottom');
+	
+	var l=0;
+	var t=0;
+	
+	obox.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		var opx=oEvent.clientX-obox.offsetLeft;
+		var opy=oEvent.clientY-obox.offsetTop;//有问题,原因，opy一直小于0，赋予0
+		
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			l=oEvent.clientX-opx;
+			t=oEvent.clientY-opy;
+			if(l<0) l=0;
+			else if(l>oh.offsetWidth-obox.offsetWidth)
+			{
+				l=oh.offsetWidth-obox.offsetWidth;
+			}
+			if(t<0) t=0;
+			else if(t>oh.offsetHeight-obox.offsetHeight)
+			{
+				t=oh.offsetHeight-obox.offsetHeight;	
+			}
+			
+			
+			obox.style.left=l+'px';
+			obox.style.top=t+'px';
+			ob.style.width=30+l+'px';
+			ob.style.height=30+l+'px';
+			
+			
+		};
+		
+		document.onmouseup=function()
+		{
+			document.onmousemove=null;
+			document.onmouseup=null;
+			
+			
+		}
+		
+		
+		
+		
+	};
+	
+	
+		
+	
+	
+};
+
+
+
+</script>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	border:0px;}
+	
+#header{
+	width:500px;
+	height:50px;
+	background:#C06;
+	position:relative;
+	margin:0px auto;}
+	
+#box{
+	width:50px;
+	height:50px;
+	background:#0F3;
+	position:absolute;
+	left:0px;
+	top:0px;}
+
+#bottom{width:30px;
+		height:30px;
+		background:#36C;
+		}
+
+
+
+</style>
+</head>
+
+<body>
+<div id="header">
+
+<div id="box"></div>
+
+</div>
+
+
+<div id="bottom"></div>
+</body>
+</html>

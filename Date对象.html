@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var t=new Date();
+/*
+var y=t.getFullYear();
+var m=t.getMonth();
+var d=t.getDate();
+var week=t.getDay();
+var year=t.getYear();
+var h=t.getHours();
+var m=t.getMinutes();
+var s=t.getSeconds();
+var s1=t.getTime();
+s=s1/1000;
+m=s/60;
+h=m/60;
+t=h/24;
+y=t/365;*/
+var diff=Date.parse("May,8,2015")-Date.parse("may,8,2014");
+var s=diff/1000;
+var m=s/60;
+var h=m/60;
+var t=h/24;
+var y=t/365
+
+alert(y);
+</script>
+</head>
+
+<body>
+</body>
+</html>

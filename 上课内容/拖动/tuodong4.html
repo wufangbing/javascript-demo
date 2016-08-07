@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>拖动</title>
+<style>
+#box { width:200px;
+		height:200px;
+		background:#639;
+		position:absolute;
+}
+</style>
+
+<script>
+window.onload=function(){
+	
+	var oBox=document.getElementById('box');
+	
+	oBox.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		
+		var px=oEvent.clientX-oBox.offsetLeft;
+		var py=oEvent.clientY-oBox.offsetTop;
+		
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			var l=oEvent.clientX-px;
+			var t=oEvent.clientY-py;
+			if(l<0)
+			{
+				l=0;	
+			}else if(l>document.documentElement.clientWidth-oBox.offsetWidth)
+			{
+					l=document.documentElement.clientWidth-oBox.offsetWidth;
+			}
+			
+			if(t<0)
+			{
+				t=0;	
+			}else if(t>document.documentElement.clientHeight-oBox.offsetHeight)
+			{
+			t=document.documentElement.clientHeight-oBox.offsetHeight;	
+				}
+			
+			oBox.style.left=l+'px';
+			oBox.style.top=t+'px';
+				
+		};
+		oBox.onmouseup=function()
+		{
+			document.onmousemove=null;
+			oBox.onmouseup=null;
+		};
+		
+		return false;
+	};	
+};
+</script>
+</head>
+
+<body>
+sdfsdfsfsfasf<br>
+afdsffsfsfdd
+<div id="box"></div>
+</body>
+</html>

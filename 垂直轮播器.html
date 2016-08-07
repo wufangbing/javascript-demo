@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>垂直轮播</title>
+<script>
+function cssStyle(obj,prop,value)
+{
+	if(arguments.length==2)
+	{
+		if(obj.currentStyle)
+		return parseFloat(obj.currentStyle[prop]);
+		else
+		return parseFloat(getComputedStyle(obj,false)[prop]);
+		
+	}
+	else
+	obj.style[prop]=value+'px';
+};
+
+window.onload=function()
+{
+	var obox=document.getElementById('all');
+	var aul=obox.getElementsByTagName('ul')[0];
+	var ali=aul.getElementsByTagName('li');
+	var aimg=aul.getElementsByTagName('img');
+	
+	var obottom=document.getElementById('bottom');
+	var ain=obottom.getElementsByTagName('input');
+	
+	cssStyle(aul,'height',cssStyle(ali[0],'height')*ali.length-14);
+	
+	var oto=document.getElementById('too');
+	var obo=document.getElementById('boo');
+	
+	
+	
+	for(var j=0;j<ain.length;j++)
+	{
+		ain[j].index=j;
+		ain[j].onclick=function()
+		{
+			for(var j=0;j<ain.length;j++)
+			ain[j].className='';
+			this.className='active';
+			sport(aul,'top',-cssStyle(ali[0],'height')*this.index);
+				i=this.index;
+		}
+		
+		
+	}
+	
+	
+	
+	var i=1;
+	var timer=null;
+	timer=setInterval(function()
+	{
+		var k=parseInt(i%4);
+		for(var j=0;j<ain.length;j++)
+			ain[j].className='';
+			ain[k].className='active';
+			
+	if(k<ali.length)
+	{
+		if(k==0)
+		cssStyle(aul,'top',0);
+	sport(aul,'top',-cssStyle(ali[0],'height')*k);	
+	i++;
+	}
+	
+	},1500);
+														//向上
+	var z=0;
+	var v=0;
+	oto.onclick=function()
+	{
+		v=parseInt(i%4);
+		if(v>=1&&v<=3)
+		{
+			z=v;
+			z--;
+			
+		sport(aul,'top',-cssStyle(ali[0],'height')*z);
+		
+		}
+		else
+		{
+			z=3;
+		cssStyle(aul,'top',-cssStyle(ali[0],'height')*z);
+		sport(aul,'top',-cssStyle(ali[0],'height')*z);
+			
+		}
+		i=z;		
+	};
+	
+														//向下
+	var z=0;
+	var v=0;
+	obo.onclick=function()
+	{
+		v=parseInt(i%4);
+		if(v>=0&&v<=2)
+		{
+			z=v;
+			z++;
+		sport(aul,'top',-cssStyle(ali[0],'height')*z);
+		
+		
+		}
+		else
+		{
+			z=0;
+		cssStyle(aul,'top',-cssStyle(ali[0],'height')*z);
+		sport(aul,'top',-cssStyle(ali[0],'height')*z);
+		}	
+		i=z;
+		
+	};
+	
+	
+	
+	
+	
+	
+};
+var timer=null;
+function sport(obj,prop,end)
+{
+	clearInterval(timer);
+	var speed=0;
+	var val=0;
+	timer=setInterval(function()
+	{
+		if(prop=='opacity')
+		val=Math.round(cssStyle(obj,prop)*100);
+		else
+		val=cssStyle(obj,prop);
+		
+		speed=(end-val)/10;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(prop=='opacity')
+		{
+			if(val==end)
+			clearInterval(timer);
+			else
+			{
+				obj.style.opacity=(val+speed)/100;
+				obj.style.filter='alpha(oapcity:'+(val+speed)+')';
+				
+			}
+			
+		}
+		else
+		{
+			if(val==end)
+			clearInterval(timer);
+			else
+			cssStyle(obj,prop,val+speed);
+			
+			
+		}	
+		
+	},30);
+	
+	
+}
+</script>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+	border:0px;
+	}
+#all{
+	width:400px;
+	height:300px;
+	border:0px solid #0F3;
+	position:relative;
+	left:400px;
+	top:200px;
+	overflow:hidden;
+	z-index:1;
+	}
+
+#all ul{
+	width:400px;
+	height:300px;
+	border:0px solid #C36;
+	list-style:none;
+	position:absolute;
+	}
+	
+#all ul li{margin-top:0px;
+			}
+
+#all img{width:400px;
+		height:300px;
+		}
+
+#bottom{width:30px;
+		height:200px;
+		border:0px solid #0FF;
+		position:absolute;
+		right:0px;
+		bottom:0px;
+		z-index:2;}
+	
+#bottom input{
+				width:30px;
+				height:30px;
+				text-align:center;
+				margin-top:2px;
+				}
+	
+.active{
+	background:#9F0;}
+	
+#too {
+	width:60px;
+	height:30px;
+	border:0px solid #00C;
+	z-index:3;
+	position:absolute;
+	text-align:center;
+	left:130px;
+	background:#F00;
+	top:0px;
+	line-height:28px;
+	}
+
+#boo {
+	line-height:28px;
+	text-align:center;
+	width:60px;
+	height:30px;
+	border:0px solid #00C;
+	z-index:3;
+	position:absolute;
+	bottom:0px;
+	background:#F00;
+	left:130px;
+	}
+
+</style>
+
+</head>
+
+<body>
+<div id="all">
+<ul>
+<li>1<img src="image/5.jpg"></li>
+<li style="margin-top:-4px;">2<img src="image/4.jpg"></li>
+<li style="margin-top:-4px;">3<img src="image/2.jpg"></li>
+<li style="margin-top:-4px;">4<img src="image/1.jpg"></li>
+</ul>
+
+
+<div id="bottom">
+<input class="active" type="button" value="1">
+<input class="" type="button" value="2">
+<input class="" type="button" value="3">
+<input class="" type="button" value="4">
+</div>
+
+<div id="too">top</div>
+
+<div id="boo">bottom</div>
+
+
+</div>
+
+
+
+</body>
+</html>

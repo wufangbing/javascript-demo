@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	var ali=obox.getElementsByTagName('li');
+	var adiv=document.getElementsByClassName('box1');
+	for(var i=0;i<ali.length;i++)
+	{
+		ali[i].index=i;
+		ali[i].onclick=function()
+		{
+			for(var j=0;j<adiv.length;j++)
+			adiv[j].style.display='none';
+			adiv[this.index].style.display='block';
+			
+		}
+		
+	}
+	
+};
+
+</script>
+<style>
+#box{
+	width:200px;
+	height:30px；
+	border:1px solid #333;
+	background:#FFF;}
+	
+.box1{
+	width:200px;
+	height:100px;
+	background:#9C0;
+	display:none;}
+
+ul{list-style:none;}
+
+ul li{
+	
+	width:30px;
+	height:28px;
+	float:left;
+	
+}
+</style>
+</head>
+
+<body>
+<div id="box">
+<ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+<div>
+<br>
+<div class="box1">1</div>
+<div class="box1">2</div>
+<div class="box1">3</div>
+
+</body>
+</html>

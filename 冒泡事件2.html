@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var adiv=document.getElementsByTagName('div');
+	
+	//var  obox=document.getElementById('box');
+	//obox.onmousemove=function(ev)
+	//{
+		//var oEvent=ev||event;
+		
+		//alert(oEvent.srcElement);
+		
+		
+	//};
+	
+	
+	
+	
+	adiv[1].onclick=function(ev)
+	{
+		var oEvent=ev||event;
+		adiv[1].cancelBubble=false;	
+	}
+	
+	
+	alert(parseInt(5*Math.random()));	
+	
+};
+
+
+</script>
+<style>
+*{	
+	margin:0px;
+	padding:0px;
+	border:0px;
+	}
+
+div{
+	padding:100px;}
+
+#box{
+	width:100px;
+	height:100px;
+	background:#C66;}
+</style>
+
+</head>
+
+<body>
+<div style="background:#0FF;" onClick="javascript:alert('a')">
+<div style="background:#C03" onClick="javascript:alert('b')">
+<div style="background:#966" onClick="javascript:alert('c')"></div>
+</div>
+
+<!--<div id="box"></div>-->
+</div>
+</body>
+</html>

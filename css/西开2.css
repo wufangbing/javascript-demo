@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/* CSS Document */
+*{
+	margin:0px;
+	padding:0px;
+	border:0px;}
+
+#all{
+	width:1008px;
+	height:2000px;
+	border:0px solid #0FF;
+	margin:auto;}
+	
+#header{
+	width:1006px;
+	height:40px;
+	border:0px solid #C30;
+	background:rgba(204,204,204,0.3);
+	}
+
+
+#he1{width:500px;
+	height:38px;
+	border:0px solid #0FC;
+	float:left;
+	font-size:10px;
+	text-align:center;}
+
+#he2{width:400px;
+	height:38px;
+	border:0px solid #0FC;
+	float:left;
+	margin-left:100px;
+	font-size:10px;
+	text-align:center;
+	}
+
+font{
+	
+	margin-top:5px;}
+	
+#he2 font
+{
+	margin-top:10px;
+	}
+
+#a1{
+	width:1006px;
+	height:110px;
+	border:0px solid #03C;
+	background:url(../../%E9%A1%B9%E7%9B%AE/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/WebContent/images/stu2.jpg);
+	}
+
+#a1 img{
+	margin-left:650px;}
+	
+#lun{
+	width:1006px;
+	height:300px;
+	border:0px solid #03C;
+	position:relative;
+	overflow:hidden;
+	}
+
+
+#lun ul{
+	list-style:none;
+	position:absolute;
+	left:0px;
+	}
+
+#lun ul li{
+	float:left;
+	}
+	
+#lun img{
+	width:1006px;
+	height:300px;
+	
+	}
+
+#lunbo{
+	width:300px;
+	height:15px;
+	border:0px solid #0F9;
+	position:absolute;
+	left:550px;
+	top:400px;
+	}	
+
+#lunbo input{
+	width:15px;
+	height:15px;
+	border-radius:15px;
+	opacity:0.3;
+	}
+
+
+	
+
+#nav {
+	width:1006px;
+	height:40px;
+	background:#CC9;}
+
+#nav ul{
+	list-style:none;}
+	
+#nav ul li{
+	width:105px;
+	height:40px;
+	float:left;
+	text-align:center;
+	font-weight:bolder;
+	color:rgba(255,255,255,1);
+	line-height:35px;
+	border:0px solid #0C9;
+	border-radius:3px;
+	}
+
+#nav ul li:hover{
+	display:block;
+	background:rgba(255,0,0,0.3);}
+	
+#sear{
+	width:108px;
+	height:38px;
+	border:0px dashed #CCCCCC;
+	text-align:left;
+	font-weight:bolder;
+	font-size:15px;
+	line-height:38px;
+	border-radius:3px;
+	color:rgba(255,255,255,1);
+	}
+
+
+#center{
+	width:1006px;
+	height:50px;
+	background:rgba(204,255,102,0.1);
+	}
+
+#center1{
+	margin-left:400px;
+	}
+
+＃nav2{width:400px;
+		height:27px;
+		}
+
+#nav2 ol{
+	
+	list-style:none;}
+
+#nav2 ol li{
+	margin-top:5px;
+	text-align:center;
+	width:100px;
+	height:25px;
+	float:left;
+	font-size:13px;
+	line-height:25px;
+	border:0px solid #999;
+	}
+	
+	
+#card{
+		width:800px;
+		height:300px;
+		margin-left:120px;
+		border:0px solid #0F9;
+		}
+	
+#card div{
+	width:800px;
+	height:300px;
+	position:absolute;
+	display:none;
+	overflow:hidden;
+	word-break:break-all;
+	}	
+	
+.active{
+	background:#963;
+	}
+
+#bottom1{
+	width:1006px;
+	height:60px;
+	background:#996;
+	}	
+	
+
+#bottom1 ul{
+	list-style:none;}
+	
+#bottom1 ul li{
+	width:99px;
+	height:58px;
+	float:left;
+	color:#FFF;
+	line-height:60px;
+	text-align:center;
+	border:0px dashed #99FF66;}
+	
+	
+#bottom2{
+	width:1006px;
+	height:200px;
+	border:0px solid #C33;
+	background:#CC9;
+	}
+
+#bottom2 div{
+	float:left;
+	
+	}
+#bottom2 .boo1{
+	width:2px;
+	height:140px;
+	background:#FFF;}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	obox.onclick=function()
+	{
+	sport(obox,100);
+	}
+	
+};
+var timer=null;
+function sport(obj,end)
+{
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		if(obj.offsetLeft==end)
+		clearInterval(timer);
+		else
+		obj.style.left=obj.offsetLeftt-1+'px';
+			
+	},30);
+	
+	
+}
+
+
+</script>
+
+
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+#line{	width:3px;
+		height:400px;
+		border:1px solid #0CF;
+		margin-left:100px;
+		background:#96C;}
+
+#box{	width:200px;
+		height:200px;
+		background:#C33;
+		position:absolute;
+		top:0px;
+		left:300px;}
+
+</style>
+</head>
+
+<body>
+<div id="line"></div>
+<div id="box"></div>
+</body>
+</html>

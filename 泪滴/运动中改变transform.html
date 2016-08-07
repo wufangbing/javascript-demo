@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript" src="西开1.js"></script>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	var adiv=document.getElementsByTagName('createDiv')
+	
+	obox.className='move';
+	
+	
+	var timer=null;
+	
+	timer=setInterval(function()
+	{
+		obox.className='change';
+	sport(obox,{top:500,},function()
+	{
+		obox.style.opacity=0;
+		for(var i=0;i<10;i++)
+		{
+			var odiv=document.createElement('div');
+			odiv.setAttribute('class','createDiv');	
+			sport(odiv,{left:Math.random()*500,top:540,opacity:0,width:Math.random()*40,height:Math.random()*40});
+			
+			document.body.appendChild(odiv);
+			
+		}
+		
+		
+		
+	}
+	
+	
+	);
+	
+	
+		
+	clearInterval(timer);		
+		
+	},4000);
+				
+	
+	
+	
+};
+
+</script>
+<style>
+@keyframes a{
+	10%{transform:scale(2.1);}
+	20%{transform:scale(2.2);}
+	30%{transform:scale(2.3);}
+	40%{transform:scale(2.4);}
+	50%{transform:scale(2.5);}
+	60%{transform:scale(2.6);}
+	70%{transform:scale(2.7);}
+	80%{transform:scale(2.8);}
+	90%{transform:scale(2.9);}
+	100%{transform:scale(3);}
+	}
+	
+#box{
+	width:20px;
+	height:20px;
+	border:0px solid #F93;
+	position:absolute;
+	top:100px;
+	left:300px; 
+	border-radius:100px;
+	background:#CCC;
+	
+	}
+	
+.move{
+	animation:a 4s linear 0s 1;
+	}
+
+.change{
+	transform:scale(3);
+	}
+
+#bottom{
+	width:500px;
+	height:20px;
+	border:1px solid #F93;
+	position:absolute;
+	top:540px;
+	left:0px; 
+	background:#333;
+	}
+
+.createDiv{
+	width:40px;
+	height:40px;
+	position:absolute;
+	top:500px;
+	left:300px;
+	border-radius:40px;
+	background:#CCC;
+	}
+	
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+
+<div id="bottom"></div>
+</body>
+</html>

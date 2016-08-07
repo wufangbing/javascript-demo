@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript" src="西开1.js"></script>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	
+	obox.onclick=function()
+	{
+		sport(obox,{top:50},function()
+		{
+		obox.className='move';  	
+			
+		})
+		
+		
+		
+	}
+	
+	
+};
+
+</script>
+<style>
+@keyframes a{
+	0%{box-shadow:10px 10px 500px #CC3366;}
+	10%{box-shadow:10px 10px 400px #CC3366;}
+	20%{box-shadow:10px 10px 300px #CC3366;}
+	30%{box-shadow:10px 10px 200px #CC3366;}
+	40%{box-shadow:10px 10px 100px #CC3366;}
+	50%{box-shadow:10px 10px   0px #CC3366;}
+	60%{box-shadow:10px 10px 100px #CC3366;}
+	70%{box-shadow:10px 10px 200px #CC3366;}
+	80%{box-shadow:10px 10px 400px #CC3366;}
+	90%{box-shadow:10px 10px 400px #CC3366;}
+	100%{box-shadow:10px 10px 500px #CC3366;}
+	}
+	
+#box{
+	width:100px;
+	height:100px;
+	border:1px solid #F93;
+	position:absolute;
+	top:500px;
+	left:300px; 
+	border-radius:100px;
+	background:#F00;
+	
+	}
+	
+.move{
+	animation:a 2s linear 0s infinite;
+	
+	}
+
+
+
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

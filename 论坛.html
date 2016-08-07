@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var adiv=document.getElementById('box');
+	var text=document.getElementsByTagName('textarea')[0];
+	var but=document.getElementsByTagName('input')[0];
+	var zdiv=adiv.getElementsByTagName('div');
+	
+	but.onclick=function()
+	{
+		
+	var odiv=document.createElement('div');
+	odiv.innerHTML=text.value;
+	
+	if(zdiv.length>0)
+	{
+	adiv.insertBefore(odiv,zdiv[0]);
+	}
+	else
+	{
+	adiv.appendChild(odiv);
+	}
+	};
+	
+};
+
+
+</script>
+<style>
+#box{width:250px;
+	border:1px dashed #00FF66;
+	border-radius:5px;}
+
+#box div{
+	width:100px;
+	height:100px;
+	border-bottom:1px dashed #0099CC;}
+
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+<textarea rows="15" cols="15"></textarea>
+<input type="button" value="提交">
+
+</body>
+</html>

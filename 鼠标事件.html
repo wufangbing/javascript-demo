@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var oa=document.getElementById('a');
+	var ob=document.getElementById('b');
+	var oc=document.getElementById('c');
+	oa.onchange=function()
+	{
+	oa.style.background='red';	
+	}
+	oa.onselect=function()
+	{
+		oa.style.background='blue';	
+	};
+	oa.onfocus=function()
+	{
+		oa.style.background='gray';
+	};
+	
+	
+	oc.onreset=function()
+	{
+		
+		alert('onreset');
+	};
+	
+}
+
+</script>
+</head>
+
+<body>
+<form action="" method="post">
+<input type="text" id="a" value="" maxlength="6" >
+<input type="submit" value="提交" id="b">
+<input type="reset" value="清除" id="c">
+</form>
+</body>
+</html>

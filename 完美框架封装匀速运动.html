@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+function cssStyle(obj,prop,value)
+{
+	if(arguments.length==2)
+	{
+		if(obj.currentStyle)
+		return parseFloat(obj.currentStyle[prop]);
+		else
+		return parseFloat(getComputedStyle(obj,false)[prop]);
+	
+	}
+	
+	else
+	obj.style[prop]=value+'px';
+	
+}; 
+
+window.onload=function()
+{
+	var odiv=document.getElementsByTagName('div')[0];
+	
+	
+	odiv.onclick=function()
+	{
+		sport(odiv,{width:500});
+		
+		
+	};
+
+	
+};
+
+
+var timer=null;
+function sport(obj,json,linear,fn)
+{
+	clearInterval(obj.timer);
+	var val=0;
+	var speed=0;
+	var flag=true;
+	obj.timer=setInterval(function(){
+		for(var name in json)
+		{
+			if(name=='opacity')
+			{
+				val=Math.round(cssStyle(obj,name)*100);
+			}
+			else
+			val=cssStyle(obj,name);
+			
+			if(linear)
+			speed=linear;
+			
+			else
+			speed=(json[name]-val)/10;
+			
+			
+			speed=speed>0?Math.ceil(speed):Math.floor(speeed);
+			
+			if(val!=json[name])
+			flag=false;
+			else
+			flag=true;
+			
+			if(name=='opacity')
+			{
+				obj.style.opacity=(speed+val)/100;
+				obj.style.filter='alpha(opacity:'+(speed+val)+')';
+				
+			}
+			else
+			cssStyle(obj,name,speed+val);
+			
+		}
+		
+		if(flag)
+		{
+			clearInterval(obj.timer);
+			if(fn)  fn();
+			
+		}
+		
+		
+		
+		
+		
+		
+		},30);
+	
+	
+	
+};
+
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+
+div{
+	
+	width:200px;
+	height:200px;
+	background:#CF6;
+	border:0px solid #0F0;}
+
+input{
+	height:30px;
+	border:0px solid #09F;
+	word-break:break-all;
+	overflow:hidden;}
+</style>
+</head>
+
+<body>
+ <div></div>
+ <textarea width="10"  value="123" maxlength=""></textarea>
+</body>
+</html>

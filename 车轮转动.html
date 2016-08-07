@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style>
+@keyframes a{
+	0%{transform:rotate(0deg);}
+	10%{transform:rotate(36deg);}
+	20%{transform:rotate(72deg);}
+	30%{transform:rotate(108deg);}
+	40%{transform:rotate(144deg);}
+	50%{transform:rotate(180deg);}
+	60%{transform:rotate(216deg);}
+	70%{transform:rotate(252deg);}
+	80%{transform:rotate(266deg);}
+	90%{transform:rotate(322deg);}
+	100%{transform:rotate(360deg);}
+	}
+*{
+	
+	margin:0px;
+	padding:0px;
+	border:0px;
+	}
+	
+body{
+	background:rgba(0,255,255,0.3);}
+
+
+#all{
+	width:300px;
+	height:300px;
+	border-radius:300px;
+	background:#CCC;
+	position:absolute;
+	left:200px;
+	top:100px;
+	}
+
+#circle{
+	width:200px;
+	height:200px;
+	border-radius:200px;
+	background:#996;
+	position:absolute;
+	left:50px;
+	top:50px;
+	animation:a 2s linear 0s infinite;
+	}
+	
+	
+#left{
+	width:10px;
+	height:140px;
+	background:#FFF;
+	position:absolute;
+	left:95px;
+	top:30px;
+	}
+	
+#center{
+	width:20px;
+	height:20px;
+	background:#F00;
+	border-radius:20px;
+	position:absolute;
+	left:90px;
+	top:90px;
+	}
+	
+#right{
+	width:140px;
+	height:10px;
+	background:#FFF;
+	position:absolute;
+	left:30px;
+	top:95px;
+	}
+</style>
+</head>
+
+<body>
+<div id="all">
+
+<div id="circle">
+
+<div id="left"></div>
+
+<div id="right"></div>
+<div id="center"></div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script>
+window.onload=function()
+{
+	var odiv=document.getElementsByTagName('div')[0];
+	//alert(document.documentElement.scrollHeight+' '+document.documentElement.scrollWidth);
+	
+	
+	document.onmousemove=function(ev)
+		{
+				var oEvent=ev||event;
+				odiv.style.left=document.body.scrollLeft+oEvent.clientX+'px';
+				odiv.style.top=document.body.scrollTop+ oEvent.clientY+'px';
+		}
+	
+};
+
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+	
+div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100px;
+	height:100px;
+	background:#9C0;}
+
+
+</style>
+</head>
+
+<body style="height:1000px;width:1000px;">
+<div></div>
+</body>
+</html>
+

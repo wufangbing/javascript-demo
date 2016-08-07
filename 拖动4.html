@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript">
+window.onload=function()
+{
+	var odiv=document.getElementsByTagName('div')[0];
+	
+	odiv.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		var opx=document.body.scrollLeft+oEvent.clientX-odiv.offsetLeft;
+		var opy=document.body.scrollTop+oEvent.clientY-odiv.offsetTop;
+	document.onmousemove=function(ev)
+		{
+				var oEvent=ev||event;
+				
+				var l=document.body.scrollLeft+oEvent.clientX-opx;
+				var t=document.body.scrollTop+oEvent.clientY-opy;
+				if(l<0)
+				l=0;
+				else if(l>document.documentElement.scrollWidth-odiv.offsetWidth)
+				l=document.documentElement.scrollWidth-odiv.offsetWidth;
+				
+				if(t<0)
+				t=0;
+				else if(t>document.documentElement.scrollHeight-odiv.offsetHeight)
+				t=document.documentElement.scrollHeight-odiv.offsetHeight;
+				
+				
+				odiv.style.left=l+'px';
+				odiv.style.top=t+'px';
+		}
+		
+		document.onmouseup=function()
+	{
+		document.onmousemove='';
+		document.onmouseup='';	
+		
+	};
+	
+	return false;
+
+	
+	}
+	
+	
+	
+};
+
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+	
+div{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100px;
+	height:100px;
+	background:#9C0;}
+
+
+</style>
+</head>
+
+<body style="height:1000px;width:1000px;">
+<div></div>
+</body>
+</html>
+
+

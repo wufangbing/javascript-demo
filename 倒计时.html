@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	function two(n)
+			{
+			if(n>9)
+			return ''+n;
+			else
+			return '0'+n;
+			}
+
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	var aimg=obox.getElementsByTagName('img');
+	var timer=null;
+	var mydate=new Date();
+	var s=mydate.getSeconds();
+	var m=mydate.getMinutes();
+	var h=mydate.getHours();
+	var d=mydate.getDate();
+	
+	var s1=0-s;
+	var m1=0-m;
+	var h1=0-h;
+	var d1=20-d;
+	var str='';
+	if(s1<0)
+	{
+		s1=s1+60;
+		m1=m1-1;	
+	}
+	if(m1<0)
+	{
+		m1=m1+60;
+		h1=h1-1;
+	}
+	if(h1<0)
+	{
+		h1=24+h1;
+		d1=d1-1;
+	}
+	str=two(d1)+two(h1)+two(m1)+two(s1);
+	for(var i=0;i<aimg.length;i++)
+	aimg[i].src='image/'+str[i]+'.png';
+	
+	 timer=function()
+	{
+	var mydate=new Date();
+	var s=mydate.getSeconds();
+	var m=mydate.getMinutes();
+	var h=mydate.getHours();
+	var d=mydate.getDate();
+	
+	var s1=0-s;
+	var m1=0-m;
+	var h1=0-h;
+	var d1=20-d;
+	var str='';
+	if(s1<0)
+	{
+		s1=s1+60;
+		m1=m1-1;	
+	}
+	if(m1<0)
+	{
+		m1=m1+60;
+		h1=h1-1;
+	}
+	if(h1<0)
+	{
+		h1=24+h1;
+		d1=d1-1;
+	}
+	str=two(d1)+two(h1)+two(m1)+two(s1);
+	for(var i=0;i<aimg.length;i++)
+	aimg[i].src='image/'+str[i]+'.png';
+	
+	}
+	setInterval(timer,1000);
+	
+};
+
+</script>
+<style>
+ul{
+	list-style:none;
+	}
+	
+li{
+	width:90px;
+	height:110px;
+	float:left;
+	font-size:30px;
+	line-height:100px;
+	
+	}
+#boxall{
+	font-size:58px;
+	color:#F00;
+	font-weight:bold;}
+
+</style>
+</head>
+
+<body>
+<div id="boxall">距离2016年五月20日还有：</div>
+<div id="box">
+<ul>
+<li><img height="110" width="90" src="image/0.png"></li>
+<li><img height="110" width="90"  src="image/0.png"></li>
+<li>days</li>
+<li><img height="110" width="90" src="image/0.png"></li>
+<li><img height="110" width="90"  src="image/0.png"></li>
+<li>hours</li>
+<li><img height="110" width="90"  src="image/0.png"></li>
+<li><img height="110" width="90"  src="image/0.png"></li>
+<li>minutes</li>
+<li><img height="110" width="90"  src="image/0.png"></li>
+<li><img height="110" width="90"  src="image/0.png"></li>
+<li>seconds</li>
+</ul>
+</div>
+</body>
+</html>

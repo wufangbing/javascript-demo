@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	obox.onmouseover=function()
+	{
+		obox.style.opacity=0.3;
+		
+	}
+	obox.onmouseout=function()
+	{
+		obox.style.opacity=1;
+		
+	}
+	
+	
+	
+};
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;}
+#box{
+	width:200px;
+	height:200px;
+	background:#009;}
+
+
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

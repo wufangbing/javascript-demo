@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var obox=document.getElementById('box');
+	
+	
+	var oul=obox.getElementsByTagName('ul')[0];
+	var ali=obox.getElementsByTagName('li');
+	var oali=obox.getElementsByClassName('lii'); 
+	
+	//for(var i=0;i<ali.length;i++)
+	//ali[i].style.background='red';
+	//alert(ool.nodeName);//节点名字
+	//alert(ool.nodeType);//节点类型
+	//alert(ool.nodeValue);//存储节点值
+	//for(var i=0;i<oul.childNodes.length;i++)
+	//{
+		//alert(oul.childNodes[i].nodeType);
+		
+//	}
+	//for(var j=0;j<oul.children.length;j++)
+	//alert(oul.children[j].nodeType);
+	//alert(oul.firstChild.nodeType);
+	//alert(oul.firstElementChild.nodeType);
+	//alert(oul.lastChild.nodeType);
+	//alert(oul.lastElementChild.nodeType);
+	//获取兄弟节点
+	//alert(oul.previousElementSibling.nodeType);
+	//alert(oul.nextElementSibling.nodeType);
+	//给html加上属性，只是单纯的加
+	obox.setAtrribute('index',2);
+	alert(obox.getAttribute('height'));
+};
+
+
+
+
+</script>
+<style>
+#box{
+	width:200px;
+	height:200px;
+	border:1px dashed #00CC00;}
+</style>
+</head>
+
+<body>
+<div id="box">
+<div>?</div>
+<ul>
+<li class="lii">111111</li>
+<li class="lii">222222</li>
+<li>333333</li>
+</ul>
+<div></div>
+</div>
+</body>
+</html>

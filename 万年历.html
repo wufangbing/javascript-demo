@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function two(n)
+{
+	if(n>9)
+	return ''+n;
+	else
+	return '0'+n;
+	
+	}
+window.onload=function()
+{
+	var aimg=document.getElementsByTagName('img');
+	var timer=null;
+	var mydate=new Date();
+	var h=mydate.getHours();
+	var m=mydate.getMinutes();
+	var s=mydate.getSeconds();
+	var str='';
+	str=two(h)+two(m)+two(s);
+	for(var i=0;i<aimg.length;i++)
+	aimg[i].src='image/'+str[i]+'.png';
+	timer=function()
+	{
+	var mydate=new Date();
+	var h=mydate.getHours();
+	var m=mydate.getMinutes();
+	var s=mydate.getSeconds();
+	var str='';
+	str=two(h)+two(m)+two(s);
+	for(var i=0;i<aimg.length;i++)
+	aimg[i].src='image/'+str[i]+'.png';
+	}
+	
+	setInterval(timer,1000);
+	//显示月
+	
+	var aop=document.getElementsByClassName('op');
+	var ata=document.getElementsByTagName('table');
+	var j=3;
+	 
+	for(var i=0;i<aop.length;i++)
+	{
+		aop[i].index=i;
+		aop[i].onclick=function()
+		{
+			for(var i=0;i<ata.length;i++)
+			{
+			ata[i].style.display='none';
+			
+			}
+			
+			ata[this.index].style.display='block';
+			ata[this.index].style.background='#'+j+j+j;
+			j=j+2;	
+		};
+		
+	}
+	
+
+};
+
+
+</script>
+<style>
+*{margin:0px;
+	padding:0px;
+	border:0px;
+	
+}
+	
+#nowtime ul{		list-style:none;
+		font-size:40px;
+		line-height:40px;
+		color:#0F6;}
+
+ul li{float:left;
+		}
+
+#nowtime{width:500px;
+		height:40px;
+		border:1px solid #069;}
+		
+#bottom{width:502px;
+		height:306px;
+		border:1px solid #069;}
+	
+#header{width:500px;
+		height:20px;
+		border:1px solid #069;
+		background:#00C;}
+
+#month{width:500px;
+		border:1px solid #0F6;}
+#month li{
+	width:70px;
+	height:20px;
+	list-style:none;
+	float:left;
+	text-align:center;
+	background:#999;
+	margin-left:1px;
+	}
+
+#box{
+	margin-top:20px;
+	width:500px;
+	height:260px;
+	border:1px solid #099; }
+
+	
+table td{width:70px;
+		height:40px;
+		border:1px solid #039;
+		text-align:center;
+		font-size:35px;
+		font-weight:bold;
+		}
+		
+table{
+	background:#0F0;
+	display:none;}
+</style>
+</head>
+
+<body>
+<div id="nowtime">
+<ul>
+<li>当前时间：</li>
+<li><img width="30" height="30" src="image/0.png"></li>
+<li><img width="30" height="30" src="image/0.png"></li>
+<li>:</li>
+<li><img width="30" height="30" src="image/0.png"></li>
+<li><img width="30" height="30" src="image/0.png"></li>
+<li>:</li>
+<li><img width="30" height="30" src="image/0.png"></li>
+<li><img width="30" height="30" src="image/0.png"></li>
+</ul>
+</div>
+
+<div id="bottom">
+<div id="header">
+公历<select>
+<option value="2013">2013</option><option value="2014">2014</option>
+<option value="2015">2015</option><option value="2016">2016</option>
+<option value="2017">2017</option><option value="2018">2018</option>
+</select>
+年<select>
+<option class="op" value="1">1</option><option class="op" value="2">2</option>
+<option class="op" value="3">3</option><option class="op" value="4" selected>4</option>
+<option class="op" value="5">5</option><option class="op" value="6">6</option>
+<option class="op" value="7">7</option><option class="op" value="8">8</option>
+<option class="op" value="9">9</option><option class="op" value="10">1<option>
+<option class="op" value="11">11</option><option class="op" value="12">12</option>
+</select>月
+
+<font style="color:#FF8000;">建国71年 农历 庚子年 【鼠年】</font>
+</div>
+<div id="month">
+<ul>
+<li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>
+</ul>
+</div>
+<div id="box">
+<table style="display:block;">
+<tr>
+<td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+</tr>
+<tr>
+<td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+</tr>
+<tr>
+<td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+</tr>
+<tr>
+<td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+</tr>
+<tr>
+<td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td>
+</tr>
+</table>
+<table>
+<tr>
+<td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+</tr>
+<tr>
+<td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+</tr>
+<tr>
+<td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+</tr>
+<tr>
+<td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+</tr>
+<tr>
+<td>27</td><td>28</td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+</table>
+<table>
+<tr>
+<td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+</tr>
+<tr>
+<td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+</tr>
+<tr>
+<td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+</tr>
+<tr>
+<td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+</tr>
+<tr>
+<td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td>
+</tr>
+</table>
+<table>
+<tr>
+<td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+</tr>
+<tr>
+<td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+</tr>
+<tr>
+<td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+</tr>
+<tr>
+<td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+</tr>
+<tr>
+<td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td>
+</tr>
+</table>
+
+
+</div>
+
+
+
+
+</div><!--结束-->
+</body>
+</html>

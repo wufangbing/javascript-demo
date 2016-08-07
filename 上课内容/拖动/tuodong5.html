@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>拖动</title>
+<style>
+#box {  width:200px;
+		height:200px;
+		background:#639;
+		position:absolute;
+}
+
+.boxborder { width:200px;
+			 height:200px;
+			 border:1px dashed #FF0000;
+			 position:absolute;}
+</style>
+
+<script>
+window.onload=function(){
+	
+	var oBox=document.getElementById('box');
+	var px=0;
+	var py=0;
+	oBox.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		
+		px=oEvent.clientX-oBox.offsetLeft;
+		py=oEvent.clientY-oBox.offsetTop;
+		
+		var ibox=document.createElement('div');
+		    
+			ibox.className='boxborder';
+			ibox.style.left=oBox.offsetLeft+'px';
+			ibox.style.top=oBox.offsetTop+'px';
+			document.body.appendChild(ibox);
+			
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			var l=oEvent.clientX-px;
+			var t=oEvent.clientY-py;
+		    
+			ibox.style.left=l-2+'px';	
+			ibox.style.top=t-2+'px';
+			
+		};
+		
+		document.onmouseup=function(ev)
+		{
+	
+			document.onmousemove=null;
+			document.onmouseup=null;
+			
+			oBox.style.left=ibox.offsetLeft+'px';
+			oBox.style.top=ibox.offsetTop+'px';
+			
+			document.body.removeChild(ibox);
+		};
+		return false;
+	};	
+};
+</script>
+</head>
+
+<body>
+sdfsdfsfsfasf<br>
+afdsffsfsfdd
+<div id="box"></div>
+</body>
+</html>
